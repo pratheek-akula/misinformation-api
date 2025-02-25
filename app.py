@@ -3,8 +3,9 @@ import pickle
 import os
 import numpy as np
 
-# Load the trained models
-base_path = "C:\\Users\\sa199385\\misinformation_env"
+base_path = os.path.dirname(os.path.abspath(__file__))  # Dynamically set the base path
+
+
 
 with open(os.path.join(base_path, "tfidf_vectorizer.pkl"), "rb") as f:
     tfidf_vectorizer = pickle.load(f)
@@ -17,7 +18,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Misinformation Detection API is Running!"
+    return "Misinformation Detection API is Running! built by pratheek"
 
 @app.route("/predict", methods=["POST"])
 def predict():
