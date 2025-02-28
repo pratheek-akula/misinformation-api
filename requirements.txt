@@ -6,3 +6,4 @@ xgboost
 nltk
 imblearn
 waitress
+flask_cors
